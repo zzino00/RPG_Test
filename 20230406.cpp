@@ -14,31 +14,27 @@ public:
 	}
 	Monster(int HP, int Attack)
 	{
-		/*this->HP = HP;
-		this->Attack = Attack;*/
+		this->HP = HP;
+		this->Attack = Attack;
 
 	}
 
 };
 
-//class MonsterType
-//{
-//public:
-//	Monster Boar;
-//	Monster Slim;
-//	Monster Goblin;
-//	
-//	MonsterType()
-//	{
-//
-//	}
-//
-//	MonsterType(Monster type)
-//	{
-//		type
-//
-//	}
-//};
+class MonsterType
+{
+public:
+	Monster Boar;
+	Monster Slim;
+	Monster Goblin;
+	
+	MonsterType()
+	{
+
+	}
+
+	
+};
 
 
 
@@ -72,6 +68,34 @@ public:
 	}
 };
 
+
+class Field
+{
+public:
+	Player player;
+	MonsterType Monster;
+	
+	void SetMonster()
+	{
+		Monster.Boar.HP = 10;
+		Monster.Boar.Attack = 10;
+		Monster.Goblin.HP = 5;
+		Monster.Goblin.Attack = 5;
+		Monster.Slim.HP = 3;
+		Monster.Slim.Attack = 3;
+
+	}
+
+	void Fight()
+	{
+		player.Attack();
+		player.Damage();
+
+
+	}
+
+
+};
 
 //entry point 시작하는 점
 int main()
